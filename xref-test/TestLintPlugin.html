@@ -28,31 +28,31 @@
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> * #L%</em>
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> */</em>
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>  
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <strong class="jxr_keyword">import</strong> schemacrawler.tools.lint.LinterRegistry;
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="..//TestLintPlugin.html">TestLintPlugin</a>
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  {
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>    @Test
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLintPlugin() <strong class="jxr_keyword">throws</strong> Exception
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>    {
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">final</strong> LinterRegistry registry = <strong class="jxr_keyword">new</strong> LinterRegistry();
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterTableNameNotInLowerCase"</span>));
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalized"</span>));
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterJsonTypeColumn"</span>));
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterJsonContent"</span>));
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterXmlContent"</span>));
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterBooleanContent"</span>));
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterPrimaryKeyNotIntegerLikeType"</span>));
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterBlobTypeColumn"</span>));
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterColumnSize"</span>));
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterByteaTypeColumn"</span>));
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterPluralTableName"</span>));
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterLeftSpacePadding"</span>));
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterRightSpacePadding"</span>));
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> schemacrawler.tools.lint.LinterRegistry;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="..//TestLintPlugin.html">TestLintPlugin</a>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  {
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>    @Test
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLintPlugin() <strong class="jxr_keyword">throws</strong> Exception
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>    {
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>      <strong class="jxr_keyword">final</strong> LinterRegistry registry = <strong class="jxr_keyword">new</strong> LinterRegistry();
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterTableNameNotInLowerCase"</span>));
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalized"</span>));
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterJsonTypeColumn"</span>));
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterJsonContent"</span>));
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterXmlContent"</span>));
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterBooleanContent"</span>));
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterPrimaryKeyNotIntegerLikeType"</span>));
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterBlobTypeColumn"</span>));
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterColumnSize"</span>));
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterByteaTypeColumn"</span>));
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      assertTrue(registry.hasLinter(<span class="jxr_string">"io.github.mbarre.schemacrawler.tool.linter.LinterPluralTableName"</span>));
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>    }
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  }
