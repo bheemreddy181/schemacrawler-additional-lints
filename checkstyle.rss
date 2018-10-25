@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2015 - 2018 github</copyright>
     <item>
-      <title>File: 20,
-             Errors: 765,
+      <title>File: 22,
+             Errors: 813,
              Warnings: 0,
              Infos: 0
       </title>
@@ -55,7 +55,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  20
+                  19
                 </td>
               </tr>
                           <tr>
@@ -69,7 +69,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  83
+                  82
                 </td>
               </tr>
                           <tr>
@@ -84,6 +84,20 @@ under the License.
                 </td>
                 <td>
                   16
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mbarre/schemacrawler-additional-lints/checkstyle.html#io.github.mbarre.schemacrawler.tool.linter.LinterRightSpacePadding.java">io/github/mbarre/schemacrawler/tool/linter/LinterRightSpacePadding.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  28
                 </td>
               </tr>
                           <tr>
@@ -111,7 +125,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  24
+                  23
                 </td>
               </tr>
                           <tr>
@@ -125,7 +139,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  65
+                  62
                 </td>
               </tr>
                           <tr>
@@ -139,7 +153,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  21
+                  22
                 </td>
               </tr>
                           <tr>
@@ -167,7 +181,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  46
+                  44
                 </td>
               </tr>
                           <tr>
@@ -181,7 +195,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  70
+                  51
                 </td>
               </tr>
                           <tr>
@@ -195,21 +209,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  24
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/mbarre/schemacrawler-additional-lints/checkstyle.html#io.github.mbarre.schemacrawler.utils.LintUtils.java">io/github/mbarre/schemacrawler/utils/LintUtils.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  18
+                  16
                 </td>
               </tr>
                           <tr>
@@ -223,7 +223,35 @@ under the License.
                   0
                 </td>
                 <td>
-                  74
+                  68
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mbarre/schemacrawler-additional-lints/checkstyle.html#io.github.mbarre.schemacrawler.utils.LintUtils.java">io/github/mbarre/schemacrawler/utils/LintUtils.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  37
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mbarre/schemacrawler-additional-lints/checkstyle.html#io.github.mbarre.schemacrawler.tool.linter.LinterLeftSpacePadding.java">io/github/mbarre/schemacrawler/tool/linter/LinterLeftSpacePadding.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  42
                 </td>
               </tr>
                           <tr>
@@ -237,7 +265,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  22
+                  23
                 </td>
               </tr>
                           <tr>
@@ -251,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  63
+                  62
                 </td>
               </tr>
                           <tr>
@@ -265,7 +293,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  49
+                  48
                 </td>
               </tr>
                           <tr>
@@ -293,21 +321,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  39
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/mbarre/schemacrawler-additional-lints/checkstyle.html#io.github.mbarre.schemacrawler.utils.XmlUtils.java">io/github/mbarre/schemacrawler/utils/XmlUtils.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  26
+                  40
                 </td>
               </tr>
                           <tr>
@@ -322,6 +336,20 @@ under the License.
                 </td>
                 <td>
                   15
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mbarre/schemacrawler-additional-lints/checkstyle.html#io.github.mbarre.schemacrawler.utils.XmlUtils.java">io/github/mbarre/schemacrawler/utils/XmlUtils.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  25
                 </td>
               </tr>
                       </tbody>
