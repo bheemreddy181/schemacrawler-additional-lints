@@ -85,6 +85,7 @@
 											<li ><a href="checkstyle.html" title="Checkstyle">Checkstyle</a></li>
 											<li ><a href="findbugs.html" title="FindBugs">FindBugs</a></li>
 											<li class="active"><a href="" title="Surefire Report">Surefire Report</a></li>
+											<li ><a href="cpd.html" title="CPD">CPD</a></li>
 											<li ><a href="pmd.html" title="PMD">PMD</a></li>
 										</ul>
 									</li>
@@ -104,7 +105,7 @@
 	<header>
 		<div>
 			<ul class="breadcrumb">
-				<li class="projectVersion version-date">Version: 1.03.04</li>
+				<li class="projectVersion version-date">Version: 1.04.00</li>
 				<li class="divider">|</li>
 				<li class="publishDate version-date">Last Published: 2018-10-26</li>
 			</ul>
@@ -115,19 +116,22 @@
 	<div class="row">
 		<div class="span12">
 			<div class="body-content">
-<script type="text/javascript">
+<script type="application/javascript">
 //<![CDATA[
 function toggleDisplay(elementId) {
- var elm = document.getElementById(elementId + 'error');
+ var elm = document.getElementById(elementId + '-error');
+ if (elm == null) {
+  elm = document.getElementById(elementId + '-failure');
+ }
  if (elm && typeof elm.style != "undefined") {
- if (elm.style.display == "none") {
- elm.style.display = "";
- document.getElementById(elementId + 'off').style.display = "none";
- document.getElementById(elementId + 'on').style.display = "inline";
- } else if (elm.style.display == "") { elm.style.display = "none";
- document.getElementById(elementId + 'off').style.display = "inline";
- document.getElementById(elementId + 'on').style.display = "none";
- } 
+  if (elm.style.display == "none") {
+   elm.style.display = "";
+   document.getElementById(elementId + '-off').style.display = "none";
+   document.getElementById(elementId + '-on').style.display = "inline";
+  } else if (elm.style.display == "") {   elm.style.display = "none";
+   document.getElementById(elementId + '-off').style.display = "inline";
+   document.getElementById(elementId + '-on').style.display = "none";
+  } 
  } 
  }
 //]]>
@@ -146,7 +150,7 @@ function toggleDisplay(elementId) {
   <thead> 
    <tr class="a"> 
     <th>Tests</th> 
-    <th>Errors </th> 
+    <th>Errors</th> 
     <th>Failures</th> 
     <th>Skipped</th> 
     <th>Success Rate</th> 
@@ -155,12 +159,12 @@ function toggleDisplay(elementId) {
   </thead> 
   <tbody> 
    <tr class="b"> 
-    <td>33</td> 
+    <td>35</td> 
     <td>0</td> 
     <td>0</td> 
     <td>0</td> 
     <td>100%</td> 
-    <td>7.085</td> 
+    <td>10.574</td> 
    </tr> 
   </tbody> 
  </table> 
@@ -178,7 +182,7 @@ function toggleDisplay(elementId) {
    <tr class="a"> 
     <th>Package</th> 
     <th>Tests</th> 
-    <th>Errors </th> 
+    <th>Errors</th> 
     <th>Failures</th> 
     <th>Skipped</th> 
     <th>Success Rate</th> 
@@ -193,7 +197,7 @@ function toggleDisplay(elementId) {
     <td>0</td> 
     <td>0</td> 
     <td>100%</td> 
-    <td>0.001</td> 
+    <td>0</td> 
    </tr> 
    <tr class="a"> 
     <td><a href="#io.github.mbarre.schemacrawler.utils">io.github.mbarre.schemacrawler.utils</a></td> 
@@ -202,30 +206,31 @@ function toggleDisplay(elementId) {
     <td>0</td> 
     <td>0</td> 
     <td>100%</td> 
-    <td>0.007</td> 
+    <td>0.006</td> 
    </tr> 
    <tr class="b"> 
     <td><a href="#io.github.mbarre.schemacrawler.tool.linter">io.github.mbarre.schemacrawler.tool.linter</a></td> 
-    <td>22</td> 
+    <td>24</td> 
     <td>0</td> 
     <td>0</td> 
     <td>0</td> 
     <td>100%</td> 
-    <td>7.077</td> 
+    <td>10.568</td> 
    </tr> 
   </tbody> 
  </table> 
  <br /> 
  <p>Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.</p> 
  <div class="section"> 
-  <h3 id="a"></h3> 
+  <h3></h3> 
+  <a name=""></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <thead> 
     <tr class="a"> 
      <th></th> 
      <th>Class</th> 
      <th>Tests</th> 
-     <th>Errors </th> 
+     <th>Errors</th> 
      <th>Failures</th> 
      <th>Skipped</th> 
      <th>Success Rate</th> 
@@ -234,14 +239,14 @@ function toggleDisplay(elementId) {
    </thead> 
    <tbody> 
     <tr class="b"> 
-     <td><a href="#TestLintPlugin"><i class="icon-ok"></i></a></td> 
-     <td><a href="#TestLintPlugin">TestLintPlugin</a></td> 
+     <td><a href="#.TestLintPlugin"><i class="icon-ok"></i></a></td> 
+     <td><a href="#.TestLintPlugin">TestLintPlugin</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.001</td> 
+     <td>0</td> 
     </tr> 
    </tbody> 
   </table> 
@@ -255,7 +260,7 @@ function toggleDisplay(elementId) {
      <th></th> 
      <th>Class</th> 
      <th>Tests</th> 
-     <th>Errors </th> 
+     <th>Errors</th> 
      <th>Failures</th> 
      <th>Skipped</th> 
      <th>Success Rate</th> 
@@ -264,18 +269,18 @@ function toggleDisplay(elementId) {
    </thead> 
    <tbody> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.utilsJSonUtilsTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.utilsJSonUtilsTest">JSonUtilsTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.utils.JSonUtilsTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.utils.JSonUtilsTest">JSonUtilsTest</a></td> 
      <td>2</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.001</td> 
+     <td>0</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.utilsLintUtilsTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.utilsLintUtilsTest">LintUtilsTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.utils.LintUtilsTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.utils.LintUtilsTest">LintUtilsTest</a></td> 
      <td>5</td> 
      <td>0</td> 
      <td>0</td> 
@@ -284,8 +289,8 @@ function toggleDisplay(elementId) {
      <td>0</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.utilsXmlUtilsTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.utilsXmlUtilsTest">XmlUtilsTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.utils.XmlUtilsTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.utils.XmlUtilsTest">XmlUtilsTest</a></td> 
      <td>3</td> 
      <td>0</td> 
      <td>0</td> 
@@ -305,7 +310,7 @@ function toggleDisplay(elementId) {
      <th></th> 
      <th>Class</th> 
      <th>Tests</th> 
-     <th>Errors </th> 
+     <th>Errors</th> 
      <th>Failures</th> 
      <th>Skipped</th> 
      <th>Success Rate</th> 
@@ -314,154 +319,174 @@ function toggleDisplay(elementId) {
    </thead> 
    <tbody> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterBlobTypeColumnTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterBlobTypeColumnTest">LinterBlobTypeColumnTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterBlobTypeColumnTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterBlobTypeColumnTest">LinterBlobTypeColumnTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>1.981</td> 
+     <td>0.708</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterBooleanContentTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterBooleanContentTest">LinterBooleanContentTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterBooleanContentTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterBooleanContentTest">LinterBooleanContentTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.002</td> 
+     <td>0.569</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterColumnContentNotNormalizedTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterColumnContentNotNormalizedTest">LinterColumnContentNotNormalizedTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalizedTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalizedTest">LinterColumnContentNotNormalizedTest</a></td> 
      <td>4</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.002</td> 
+     <td>0.276</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterColumnSizeTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterColumnSizeTest">LinterColumnSizeTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterColumnSizeTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterColumnSizeTest">LinterColumnSizeTest</a></td> 
      <td>3</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0</td> 
+     <td>0.189</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterForeignKeyMismatchLazyTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterForeignKeyMismatchLazyTest">LinterForeignKeyMismatchLazyTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyMismatchLazyTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyMismatchLazyTest">LinterForeignKeyMismatchLazyTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.326</td> 
+     <td>0.307</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterForeignKeyNameTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterForeignKeyNameTest">LinterForeignKeyNameTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyNameTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyNameTest">LinterForeignKeyNameTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.248</td> 
+     <td>0.335</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterJsonContentTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterJsonContentTest">LinterJsonContentTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterJsonContentTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterJsonContentTest">LinterJsonContentTest</a></td> 
      <td>3</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.279</td> 
+     <td>0.19</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterJsonTypeColumnTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterJsonTypeColumnTest">LinterJsonTypeColumnTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterJsonTypeColumnTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterJsonTypeColumnTest">LinterJsonTypeColumnTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.16</td> 
+     <td>0.15</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterNoSpaceInNamesTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterNoSpaceInNamesTest">LinterNoSpaceInNamesTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterLeftSpacePaddingTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterLeftSpacePaddingTest">LinterLeftSpacePaddingTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.152</td> 
+     <td>0.289</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterOrphanTableTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterOrphanTableTest">LinterOrphanTableTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterNoSpaceInNamesTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterNoSpaceInNamesTest">LinterNoSpaceInNamesTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.182</td> 
+     <td>0.172</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterPluralTableNameTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterPluralTableNameTest">LinterPluralTableNameTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterOrphanTableTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterOrphanTableTest">LinterOrphanTableTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.192</td> 
+     <td>0.227</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterPrimaryKeyNotIntegerLikeTypeTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterPrimaryKeyNotIntegerLikeTypeTest">LinterPrimaryKeyNotIntegerLikeTypeTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterPluralTableNameTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterPluralTableNameTest">LinterPluralTableNameTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.222</td> 
+     <td>0.226</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterTableNameNotInLowerCaseTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterTableNameNotInLowerCaseTest">LinterTableNameNotInLowerCaseTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterPrimaryKeyNotIntegerLikeTypeTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterPrimaryKeyNotIntegerLikeTypeTest">LinterPrimaryKeyNotIntegerLikeTypeTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.159</td> 
+     <td>0.23</td> 
     </tr> 
     <tr class="a"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterXmlContentTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterXmlContentTest">LinterXmlContentTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterRightSpacePaddingTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterRightSpacePaddingTest">LinterRightSpacePaddingTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>0.153</td> 
+     <td>0.339</td> 
     </tr> 
     <tr class="b"> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterCompressBlobTest"><i class="icon-ok"></i></a></td> 
-     <td><a href="#io.github.mbarre.schemacrawler.tool.linterLinterCompressBlobTest">LinterCompressBlobTest</a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterTableNameNotInLowerCaseTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterTableNameNotInLowerCaseTest">LinterTableNameNotInLowerCaseTest</a></td> 
      <td>1</td> 
      <td>0</td> 
      <td>0</td> 
      <td>0</td> 
      <td>100%</td> 
-     <td>3.019</td> 
+     <td>0.157</td> 
+    </tr> 
+    <tr class="a"> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterXmlContentTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterXmlContentTest">LinterXmlContentTest</a></td> 
+     <td>1</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>100%</td> 
+     <td>0.118</td> 
+    </tr> 
+    <tr class="b"> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterCompressBlobTest"><i class="icon-ok"></i></a></td> 
+     <td><a href="#io.github.mbarre.schemacrawler.tool.linter.LinterCompressBlobTest">LinterCompressBlobTest</a></td> 
+     <td>1</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>0</td> 
+     <td>100%</td> 
+     <td>6.086</td> 
     </tr> 
    </tbody> 
   </table> 
@@ -474,33 +499,33 @@ function toggleDisplay(elementId) {
  <p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p> 
  <div class="section"> 
   <h3 id="LinterBlobTypeColumnTest">LinterBlobTypeColumnTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterBlobTypeColumnTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterBlobTypeColumnTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterBlobTypeColumnTest.testLint"></a>testLint</td> 
-     <td>1.981</td> 
+     <td>0.708</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterBooleanContentTest">LinterBooleanContentTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterBooleanContentTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterBooleanContentTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterBooleanContentTest.testLint_int"></a>testLint_int</td> 
-     <td>0.002</td> 
+     <td>0.569</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterColumnContentNotNormalizedTest">LinterColumnContentNotNormalizedTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterColumnContentNotNormalizedTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalizedTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
@@ -511,193 +536,219 @@ function toggleDisplay(elementId) {
     <tr class="b"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalizedTest.testLint"></a>testLint</td> 
-     <td>0.001</td> 
+     <td>0.275</td> 
     </tr> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalizedTest.testMustColumnBeTested"></a>testMustColumnBeTested</td> 
-     <td>0</td> 
+     <td>0.001</td> 
     </tr> 
     <tr class="b"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalizedTest.testGetDescription"></a>testGetDescription</td> 
-     <td>0.001</td> 
+     <td>0</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterColumnSizeTest">LinterColumnSizeTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterColumnSizeTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterColumnSizeTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterColumnSizeTest.testLint_getSummary"></a>testLint_getSummary</td> 
-     <td>0</td> 
+     <td>0.002</td> 
     </tr> 
     <tr class="b"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterColumnSizeTest.testLint_getDescription"></a>testLint_getDescription</td> 
-     <td>0</td> 
+     <td>0.002</td> 
     </tr> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterColumnSizeTest.testLint_varchar"></a>testLint_varchar</td> 
-     <td>0</td> 
+     <td>0.185</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterForeignKeyMismatchLazyTest">LinterForeignKeyMismatchLazyTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterForeignKeyMismatchLazyTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyMismatchLazyTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyMismatchLazyTest.testLint"></a>testLint</td> 
-     <td>0.326</td> 
+     <td>0.307</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterForeignKeyNameTest">LinterForeignKeyNameTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterForeignKeyNameTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyNameTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyNameTest.testLint"></a>testLint</td> 
-     <td>0.248</td> 
+     <td>0.335</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterJsonContentTest">LinterJsonContentTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterJsonContentTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterJsonContentTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterJsonContentTest.testLint_getSummary"></a>testLint_getSummary</td> 
-     <td>0.003</td> 
+     <td>0.002</td> 
     </tr> 
     <tr class="b"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterJsonContentTest.testLint_getDescription"></a>testLint_getDescription</td> 
-     <td>0.004</td> 
+     <td>0.001</td> 
     </tr> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterJsonContentTest.testLint"></a>testLint</td> 
-     <td>0.272</td> 
+     <td>0.187</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterJsonTypeColumnTest">LinterJsonTypeColumnTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterJsonTypeColumnTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterJsonTypeColumnTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterJsonTypeColumnTest.testLint"></a>testLint</td> 
-     <td>0.16</td> 
+     <td>0.15</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+ <div class="section"> 
+  <h3 id="LinterLeftSpacePaddingTest">LinterLeftSpacePaddingTest</h3> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterLeftSpacePaddingTest"></a> 
+  <table border="1" class="bodyTable table table-striped table-hover"> 
+   <tbody> 
+    <tr class="a"> 
+     <td><i class="icon-ok"></i></td> 
+     <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterLeftSpacePaddingTest.testLint"></a>testLint</td> 
+     <td>0.289</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterNoSpaceInNamesTest">LinterNoSpaceInNamesTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterNoSpaceInNamesTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterNoSpaceInNamesTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterNoSpaceInNamesTest.testLint"></a>testLint</td> 
-     <td>0.152</td> 
+     <td>0.172</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterOrphanTableTest">LinterOrphanTableTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterOrphanTableTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterOrphanTableTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterOrphanTableTest.testLint"></a>testLint</td> 
-     <td>0.182</td> 
+     <td>0.227</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterPluralTableNameTest">LinterPluralTableNameTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterPluralTableNameTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterPluralTableNameTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterPluralTableNameTest.testLint"></a>testLint</td> 
-     <td>0.192</td> 
+     <td>0.226</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterPrimaryKeyNotIntegerLikeTypeTest">LinterPrimaryKeyNotIntegerLikeTypeTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterPrimaryKeyNotIntegerLikeTypeTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterPrimaryKeyNotIntegerLikeTypeTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterPrimaryKeyNotIntegerLikeTypeTest.testLint"></a>testLint</td> 
-     <td>0.222</td> 
+     <td>0.23</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+ <div class="section"> 
+  <h3 id="LinterRightSpacePaddingTest">LinterRightSpacePaddingTest</h3> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterRightSpacePaddingTest"></a> 
+  <table border="1" class="bodyTable table table-striped table-hover"> 
+   <tbody> 
+    <tr class="a"> 
+     <td><i class="icon-ok"></i></td> 
+     <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterRightSpacePaddingTest.testLint"></a>testLint</td> 
+     <td>0.339</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterTableNameNotInLowerCaseTest">LinterTableNameNotInLowerCaseTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterTableNameNotInLowerCaseTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterTableNameNotInLowerCaseTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterTableNameNotInLowerCaseTest.testLint"></a>testLint</td> 
-     <td>0.159</td> 
+     <td>0.157</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="LinterXmlContentTest">LinterXmlContentTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterXmlContentTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterXmlContentTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterXmlContentTest.testLint"></a>testLint</td> 
-     <td>0.153</td> 
+     <td>0.118</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
   <h3 id="JSonUtilsTest">JSonUtilsTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.utilsJSonUtilsTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.utils.JSonUtilsTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.utils.JSonUtilsTest.testUtils_fails"></a>testUtils_fails</td> 
-     <td>0.001</td> 
+     <td>0</td> 
     </tr> 
     <tr class="b"> 
      <td><i class="icon-ok"></i></td> 
@@ -709,7 +760,7 @@ function toggleDisplay(elementId) {
  </div> 
  <div class="section"> 
   <h3 id="LintUtilsTest">LintUtilsTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.utilsLintUtilsTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.utils.LintUtilsTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
@@ -742,49 +793,49 @@ function toggleDisplay(elementId) {
  </div> 
  <div class="section"> 
   <h3 id="XmlUtilsTest">XmlUtilsTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.utilsXmlUtilsTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.utils.XmlUtilsTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.utils.XmlUtilsTest.testUtils_fails"></a>testUtils_fails</td> 
-     <td>0.002</td> 
+     <td>0.004</td> 
     </tr> 
     <tr class="b"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.utils.XmlUtilsTest.testUtils_success"></a>testUtils_success</td> 
-     <td>0.002</td> 
+     <td>0.001</td> 
     </tr> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.utils.XmlUtilsTest.testXmlEvenWithMissingProlog"></a>testXmlEvenWithMissingProlog</td> 
-     <td>0.002</td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
- <div class="section"> 
-  <h3 id="TestLintPlugin">TestLintPlugin</h3> 
-  <a name="TestLintPlugin"></a> 
-  <table border="1" class="bodyTable table table-striped table-hover"> 
-   <tbody> 
-    <tr class="a"> 
-     <td><i class="icon-ok"></i></td> 
-     <td><a name="TC_TestLintPlugin.testLintPlugin"></a>testLintPlugin</td> 
      <td>0.001</td> 
     </tr> 
    </tbody> 
   </table> 
  </div> 
  <div class="section"> 
+  <h3 id="TestLintPlugin">TestLintPlugin</h3> 
+  <a name=".TestLintPlugin"></a> 
+  <table border="1" class="bodyTable table table-striped table-hover"> 
+   <tbody> 
+    <tr class="a"> 
+     <td><i class="icon-ok"></i></td> 
+     <td><a name="TC_TestLintPlugin.testLintPlugin"></a>testLintPlugin</td> 
+     <td>0</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+ <div class="section"> 
   <h3 id="LinterCompressBlobTest">LinterCompressBlobTest</h3> 
-  <a name="io.github.mbarre.schemacrawler.tool.linterLinterCompressBlobTest"></a> 
+  <a name="io.github.mbarre.schemacrawler.tool.linter.LinterCompressBlobTest"></a> 
   <table border="1" class="bodyTable table table-striped table-hover"> 
    <tbody> 
     <tr class="a"> 
      <td><i class="icon-ok"></i></td> 
      <td><a name="TC_io.github.mbarre.schemacrawler.tool.linter.LinterCompressBlobTest.testLint_blob"></a>testLint_blob</td> 
-     <td>3.019</td> 
+     <td>6.086</td> 
     </tr> 
    </tbody> 
   </table> 
@@ -852,6 +903,9 @@ function toggleDisplay(elementId) {
 						</li>
 						<li class="active">
 							<a href="#" title="Surefire Report">Surefire Report</a>
+						</li>
+						<li >
+							<a href="cpd.html" title="CPD">CPD</a>
 						</li>
 						<li >
 							<a href="pmd.html" title="PMD">PMD</a>
