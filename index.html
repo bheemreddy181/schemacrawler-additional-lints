@@ -8,7 +8,7 @@
 
 	<head>
 		<meta charset="UTF-8" />
-		<title>Schemacrawler Additionnal Lints - CPD Results</title>
+		<title>Schemacrawler Additionnal Lints - </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 		<meta http-equiv="content-language" content="en" />
@@ -33,7 +33,7 @@
 
 	</head>
 
-	<body class="page-cpd project-schemacrawler-additional-lints" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
+	<body class="page-index project-schemacrawler-additional-lints" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
 
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
@@ -47,10 +47,10 @@
 					<div class="nav-collapse collapse" id="top-nav-collapse">
 						<ul class="nav pull-right">
 							<li ><a href="http://github.com/mbarre/schemacrawler-additional-lints" title="Project github page" class="externalLink">Project github page</a></li>
-							<li class="dropdown">
+							<li class="dropdown active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Additional Lints <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li ><a href="index.html" title="About Additional Lints">About Additional Lints</a></li>
+									<li class="active"><a href="" title="About Additional Lints">About Additional Lints</a></li>
 									<li ><a href="releases" title="Download">Download</a></li>
 									<li ><a href="https://cute-db.github.io" title="Related projects" class="externalLink">Related projects</a></li>
 								</ul>
@@ -62,7 +62,7 @@
 									<li ><a href="../../sualeh/SchemaCrawler/releases/" title="Download">Download</a></li>
 								</ul>
 							</li>
-							<li class="dropdown active">
+							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Project Documentation <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu ">
@@ -85,7 +85,6 @@
 											<li ><a href="checkstyle.html" title="Checkstyle">Checkstyle</a></li>
 											<li ><a href="findbugs.html" title="FindBugs">FindBugs</a></li>
 											<li ><a href="surefire-report.html" title="Surefire Report">Surefire Report</a></li>
-											<li class="active"><a href="" title="CPD">CPD</a></li>
 											<li ><a href="pmd.html" title="PMD">PMD</a></li>
 										</ul>
 									</li>
@@ -105,7 +104,7 @@
 	<header>
 		<div>
 			<ul class="breadcrumb">
-				<li class="projectVersion version-date">Version: 1.04.01-SNAPSHOT</li>
+				<li class="projectVersion version-date">Version: 1.04.00</li>
 				<li class="divider">|</li>
 				<li class="publishDate version-date">Last Published: 2018-10-26</li>
 			</ul>
@@ -117,113 +116,58 @@
 		<div class="span12">
 			<div class="body-content">
 <div class="section"> 
- <div class="page-header">
-  <h2 id="CPD_Results">CPD Results</h2>
- </div> 
- <p>The following document contains the results of PMD's <a class="externalLink" href="http://pmd.sourceforge.net/cpd.html">CPD</a> 6.4.0.</p> 
-</div> 
-<div class="section"> 
- <h2 id="Duplications">Duplications</h2> 
- <table border="0" class="bodyTable table table-striped table-hover"> 
-  <thead> 
-   <tr class="a"> 
-    <th>File</th> 
-    <th>Line</th> 
-   </tr> 
-  </thead> 
-  <tbody> 
-   <tr class="b"> 
-    <td>io/github/mbarre/schemacrawler/tool/linter/LinterLeftSpacePadding.java</td> 
-    <td><a href="./xref/io/github/mbarre/schemacrawler/tool/linter/LinterLeftSpacePadding.html#L66">66</a></td> 
-   </tr> 
-   <tr class="a"> 
-    <td>io/github/mbarre/schemacrawler/tool/linter/LinterRightSpacePadding.java</td> 
-    <td><a href="./xref/io/github/mbarre/schemacrawler/tool/linter/LinterRightSpacePadding.html#L69">69</a></td> 
-   </tr> 
-   <tr class="b"> 
-    <td colspan="2"> 
-     <div> 
-      <pre>	protected void lint(Table table, Connection connection) throws SchemaCrawlerException {
-		try (Statement stmt = connection.createStatement()){
+ <div class="section"> 
+  <h3 id="About_Additional_SchemaCrawler_Lints">About Additional SchemaCrawler Lints</h3> 
+  <p>This project is a set of free basic database lints that come in addition to the ones embedded in Schemacrawler Lint.</p> 
+  <p>Additional lint checks are : </p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterBlobTypeColumn</i><br /> Checks that no binary column type is used.<br /> Default severity : critical.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterBooleanContent</i><br /> Checks if column type should be boolean. ex.: int column with only 1 and 0 values.<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterByteaTypeColumn</i><br /> Checks that no binary column type is used. Postgres recommandation is to use OID.<br /> Default severity : medium.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterColomnContentNotNormalized</i><br /> Checks wether foreign table should have been used. This linter is configurable thanks config file and following parameters:</p> 
+  <div class="source"> 
+   <pre> &lt;linter id=&quot;io.github.mbarre.schemacrawler.tool.linter.LinterColumnContentNotNormalized&quot;&gt;
+  &lt;run&gt;true&lt;/run&gt;
+  &lt;config&gt;
+    &lt;property name=&quot;nbRepeatTolerance&quot;&gt;2&lt;/property&gt;
+    &lt;property name=&quot;minTextColumnSize&quot;&gt;2&lt;/property&gt;
+  &lt;/config&gt;  
+ &lt;/linter&gt;
+</pre>
+  </div> 
+  <p>nbRepeatTolerance : Repeat tolerance, 1 is the most agressive, duplicates occur since there are at least two reps of the same value. Default value is set to 2.<br /> minTextColumnSize : The minimal length of the text based column. We consider that a 1-length char based column is acceptable. Default value is set to 2.<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterColumnSize</i><br /> Checks that string like type column size is appropriated. This linter is configurable thanks config file and following parameter:</p> 
+  <div class="source"> 
+   <pre>&lt;linter id=&quot;io.github.mbarre.schemacrawler.tool.linter.LinterColumnSize&quot;&gt;
+  &lt;run&gt;true&lt;/run&gt;
+  &lt;config&gt;
+    &lt;property name=&quot;minColumnSizePercent&quot;&gt;20&lt;/property&gt;
+  &lt;/config&gt;
+&lt;/linter&gt;
+</pre>
+  </div> 
+  <p>Default value is minColumnSizePercent = 20.<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterCompressBlob</i><br /> If column is BLOB or BINARY type, checks if compression can be useful: This linter is configurable thanks config file and following parameter:</p> 
+  <div class="source"> 
+   <pre>  &lt;linter id=&quot;io.github.mbarre.schemacrawler.tool.linter.LinterCompressBlob&quot;&gt;
+    &lt;run&gt;true&lt;/run&gt;
+    &lt;config&gt;
+      &lt;property name=&quot;minCompressionPercent&quot;&gt;30&lt;/property&gt;
+    &lt;/config&gt;
+  &lt;/linter&gt;
 
-			LOGGER.log(Level.CONFIG, &quot;&lt;&quot; + SAMPLE_SIZE_PARAM + &quot;&gt; parameter set to {0}%&quot;, sampleSize);
-
-			String sql;
-			String columnName;
-			String valueFound = &quot;&quot;;
-			String tableName = table.getName().replaceAll(&quot;\&quot;&quot;, &quot;&quot;);
-
-			List&lt;Column&gt; columns = getColumns(table);
-
-			Long totalRows = 0L;
-			totalRows = LintUtils.getTableSize(stmt, tableName);
-			LOGGER.log(Level.INFO, &quot;totalrows=&quot; + totalRows);
-			Set&lt;Long&gt; sampleIndexes = LintUtils.generateSample(sampleSize, totalRows);
-			LOGGER.log(Level.INFO, &quot;sampleIndexes=&quot; + sampleIndexes);
-
-			for (Column column : columns) {
-				if(LintUtils.isSqlTypeTextBased(column.getColumnDataType().getJavaSqlType().getVendorTypeNumber())){
-
-					columnName = column.getName().replaceAll(&quot;\&quot;&quot;, &quot;&quot;);
-					sql = &quot;select distinct \&quot;&quot; + columnName + &quot;\&quot; from \&quot;&quot; + tableName + &quot;\&quot;&quot; ;
-
-					LOGGER.log(Level.CONFIG, &quot;SQL : {0}&quot;, sql);
-
-					try (ResultSet rs = stmt.executeQuery(sql)) {
-						Long i = 0L;
-						while (rs.next()) {
-							if (sampleIndexes.contains(i)) {
-								if (rs.getObject(columnName) != null) {
-									valueFound = rs.getObject(columnName).toString();
-								}
-
-								if(valueFound.length() &gt; 0 &amp;&amp; Character.isWhitespace(valueFound.charAt(0))){</pre> 
-     </div></td> 
-   </tr> 
-  </tbody> 
- </table> 
- <table border="0" class="bodyTable table table-striped table-hover"> 
-  <thead> 
-   <tr class="a"> 
-    <th>File</th> 
-    <th>Line</th> 
-   </tr> 
-  </thead> 
-  <tbody> 
-   <tr class="b"> 
-    <td>io/github/mbarre/schemacrawler/tool/linter/LinterLeftSpacePadding.java</td> 
-    <td><a href="./xref/io/github/mbarre/schemacrawler/tool/linter/LinterLeftSpacePadding.html#L74">74</a></td> 
-   </tr> 
-   <tr class="a"> 
-    <td>io/github/mbarre/schemacrawler/tool/linter/LinterRightSpacePadding.java</td> 
-    <td><a href="./xref/io/github/mbarre/schemacrawler/tool/linter/LinterRightSpacePadding.html#L77">77</a></td> 
-   </tr> 
-   <tr class="b"> 
-    <td>io/github/mbarre/schemacrawler/tool/linter/LinterXmlContent.java</td> 
-    <td><a href="./xref/io/github/mbarre/schemacrawler/tool/linter/LinterXmlContent.html#L103">103</a></td> 
-   </tr> 
-   <tr class="a"> 
-    <td colspan="2"> 
-     <div> 
-      <pre>			String tableName = table.getName().replaceAll(&quot;\&quot;&quot;, &quot;&quot;);
-
-			List&lt;Column&gt; columns = getColumns(table);
-
-			Long totalRows = 0L;
-			totalRows = LintUtils.getTableSize(stmt, tableName);
-			LOGGER.log(Level.INFO, &quot;totalrows=&quot; + totalRows);
-			Set&lt;Long&gt; sampleIndexes = LintUtils.generateSample(sampleSize, totalRows);
-			LOGGER.log(Level.INFO, &quot;sampleIndexes=&quot; + sampleIndexes);
-
-			for (Column column : columns) {
-				if(LintUtils.isSqlTypeTextBased(column.getColumnDataType().getJavaSqlType().getVendorTypeNumber())){
-
-					columnName = column.getName().replaceAll(&quot;\&quot;&quot;, &quot;&quot;);
-					sql = &quot;select distinct \&quot;&quot; + columnName + &quot;\&quot; from \&quot;&quot; + tableName + &quot;\&quot;&quot; ;</pre> 
-     </div></td> 
-   </tr> 
-  </tbody> 
- </table> 
+Default value is minCompressionPercent = 20, means if compressed file is more than 20% smaller than original one, you shoud compress it.   
+Default severity : high.
+</pre>
+  </div> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterForeignKeyMismatchLazy</i><br /> Check that a foreign key has the same type as the referenced primary key.<br /> Default severity : critical.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterForeignKeyName</i><br /> If you need your foreign key name has a specific prefix or suffix, this linter can check it. Default severity : medium. Exemple : if you want your foreign key starts with ‘id_’</p> 
+  <p><tt> &lt;linter id=&quot;io.github.mbarre.schemacrawler.tool.linter.LinterForeignKeyName&quot;&gt; &lt;run&gt;true&lt;/run&gt; &lt;severity&gt;medium&lt;/severity&gt; &lt;config&gt; &lt;property name=&quot;foreignKeyPrefix&quot;&gt;id_&lt;/property&gt; &lt;/config&gt; &lt;/linter&gt; </tt> </p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterJsonContent</i><br /> Checks if column type should be JSON according to its content.<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterJsonTypeColumn</i><br /> Checks that JSONB type is used for JSON content. (PostgresSQL)<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterPrimarykeyNotIntegerLikeType</i><br /> Checks that primary is integer like type.<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterTableNameNotInLowerCase</i><br /> Checks that all tables and columns names are in lower case.<br /> Default severity : high.</p> 
+  <p><b>Linter :</b> <i>io.github.mbarre.schemacrawler.tools.LinterXmlContent</i><br /> Check that columns with XML content is XML type.<br /> Default severity : high.</p>
+ </div>
 </div>
 			</div>
 		</div>
@@ -240,8 +184,8 @@
 				<div class="span9 bottom-nav">
 					<ul class="nav nav-list">
 						<li class="nav-header">Additional Lints</li>
-						<li >
-							<a href="index.html" title="About Additional Lints">About Additional Lints</a>
+						<li class="active">
+							<a href="#" title="About Additional Lints">About Additional Lints</a>
 						</li>
 						<li >
 							<a href="releases" title="Download">Download</a>
@@ -261,39 +205,7 @@
 							<a href="project-info.html" title="Project Information">Project Information <i class="icon-chevron-right"></i></a>
 						</li>
 						<li >
-							<a href="project-reports.html" title="Project Reports">Project Reports <i class="icon-chevron-down"></i></a>
-							<ul class="nav nav-list">
-						<li >
-							<a href="apidocs/index.html" title="Javadoc">Javadoc</a>
-						</li>
-						<li >
-							<a href="testapidocs/index.html" title="Test Javadoc">Test Javadoc</a>
-						</li>
-						<li >
-							<a href="xref/index.html" title="Source Xref">Source Xref</a>
-						</li>
-						<li >
-							<a href="xref-test/index.html" title="Test Source Xref">Test Source Xref</a>
-						</li>
-						<li >
-							<a href="taglist.html" title="Tag List">Tag List</a>
-						</li>
-						<li >
-							<a href="checkstyle.html" title="Checkstyle">Checkstyle</a>
-						</li>
-						<li >
-							<a href="findbugs.html" title="FindBugs">FindBugs</a>
-						</li>
-						<li >
-							<a href="surefire-report.html" title="Surefire Report">Surefire Report</a>
-						</li>
-						<li class="active">
-							<a href="#" title="CPD">CPD</a>
-						</li>
-						<li >
-							<a href="pmd.html" title="PMD">PMD</a>
-						</li>
-							</ul>
+							<a href="project-reports.html" title="Project Reports">Project Reports <i class="icon-chevron-right"></i></a>
 						</li>
 					</ul>
 				</div>
