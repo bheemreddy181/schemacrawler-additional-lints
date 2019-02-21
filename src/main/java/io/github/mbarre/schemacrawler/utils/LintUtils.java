@@ -124,6 +124,16 @@ public class LintUtils {
 				|| javaSqlType == Types.TIMESTAMP
 				|| javaSqlType == Types.TIMESTAMP_WITH_TIMEZONE;
 	}
+	
+	/**
+	 * Tells wether a column is date like type or not.
+	 * @param javaSqlType the dataType
+	 * @return is the sqlType is date based or not
+	 */
+	public static final boolean isSqlTypeTimeStampBased(int javaSqlType) {
+		return javaSqlType == Types.TIMESTAMP;
+	}
+	
 
 	public static Set<Long> generateSample(int sampleSize, Long totalRows){
 		Set<Long> sampleIndex = new HashSet<>();
